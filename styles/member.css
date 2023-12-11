@@ -1,36 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+.board {
+    padding: 20px;
 }
 
-
-:root {
-    --primary: #25B4B2;
-    --secondary: #006D68;
-    --white: #ffffff;
-    --black: #000000;
-    --hover: #E3FFFF;
-  }
-  
-
-body{
-
+#myTable {
     width: 100%;
-    position: relative;
 }
 
-.members-section{
+#myTable_wrapper {
+    margin-top: 20px;
+}
+
+.button-search {
+    padding: 8px 16px;
+    background-color: #25B4B2;
     color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #25B4B270;
-    height: 87dvh;
-    width: 100%;
-    
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-search {
+    padding: 8px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.remove-button {
+    padding: 6px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#myTable th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+#myTable td {
+    text-align: center;
+    padding: 7px;
+}
+
+#myTable tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+#myTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }

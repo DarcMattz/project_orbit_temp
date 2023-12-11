@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     var validemail, validpass = false;
 
     $("#email").on("keyup", function () {
@@ -27,13 +26,13 @@ $(document).ready(function () {
             validpass =true;
         }else{
             $("#showpass p").css("color", "red");
-            $("#showpass p").text("");
+            $("#showpass p").text("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character");
             validpass = false;
         }
     });
 
    
-    $("#loginbtn").on("click", function(){
+    $("#signup_btn").on("click", function(){
             if(!validemail){
                 $("#showemail p").css("color", "red");
                 $("#showemail p").text("Invalid email...");
@@ -48,8 +47,10 @@ $(document).ready(function () {
                 var form_data = new FormData();                  
                 form_data.append('email', emailval);    
                 form_data.append('pass', passval);  
-                form_data.append('set', "1");  
+                form_data.append('sign', "1");  
                 
+             
+            
                 $.ajax({
                     url: '../components/database_code.php', 
                     dataType: 'json',  
@@ -57,20 +58,16 @@ $(document).ready(function () {
                     contentType: false,
                     processData: false,
                     data: form_data,                         
-                    type: 'post',
+                    type: 'POST',
                     success: function(response){
-                        if(response == "false"){
+                        if(response == "emailfalse"){
                             $("#showemail p").css("color", "red");
-                            $("#showemail p").text("Email does not exist...");
-                            $("#showpass p").css("color", "red");
-                            $("#showpass p").text("Invalid password");
-                        }else if(response == "falsepass"){
-                            $("#showpass p").css("color", "red");
-                            $("#showpass p").text("Wrong password");
+                            $("#showemail p").text("Email has already taken...");
+                            $("#showpass p").css("color", "green");
                         }
-                        else if(response == "true"){
-                            alert("Login Successfully");
-                            window.location.href="dashboard.php";
+                        else if(response == "emailtrue"){
+                            alert("Signup Successfully");
+                            window.location.href="login.php";
                         }
                         
                     }

@@ -60,7 +60,7 @@ function displayImage()
 
  function onSidebarButtons()
  {
-    $("#board-btn").click(function () { 
+    $(document).on("click","#board-btn",function () { 
         $("#board-btn").removeClass("selected-btn");
         $("#member-btn").removeClass("selected-btn");
         $("#calendar-btn").removeClass("selected-btn");
@@ -77,7 +77,7 @@ function displayImage()
     });
 
 
-    $("#member-btn").on("click", function(){
+    $(document).on("click","#member-btn", function(){
         
        $("#board-btn").removeClass("selected-btn");
        $("#member-btn").removeClass("selected-btn");
@@ -93,7 +93,7 @@ function displayImage()
     });
 
 
-    $("#calendar-btn").on("click", function(){
+    $(document).on("click","#calendar-btn",function(){
 
         $("#board-btn").removeClass("selected-btn");
         $("#member-btn").removeClass("selected-btn");

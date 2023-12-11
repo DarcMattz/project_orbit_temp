@@ -1,6 +1,12 @@
 <?php
 validate_Files();
-echo validate_login();
+if(isset($_POST['set'])){
+echo json_encode(validate_login());
+}
+
+if(isset($_POST['sign'])){
+echo json_encode(validate_signup());
+}
 ?>
 
 <?php
@@ -35,7 +41,6 @@ function validate_Files(){
     
 }
 
-
 // LOG IN
 
 function validate_login(){
@@ -43,7 +48,7 @@ function validate_login(){
     if(isset($_POST['set'])){
 
             $email = $_POST['email'];
-            $pass = $_POST['pass'];
+            $pass = hash("sha256", $_POST['pass']);
 
             $verify = false;
             require "../config/connection.php";
@@ -58,17 +63,18 @@ function validate_login(){
                     if(trim($data['password']) == trim($pass)){
                         $verify = true;
                     }else{
-                        return "Incorrect password";
+                        return "falsepass";
                     }
                 } 
 
             }
             $result -> free();
             $conn -> close();
+            
             if($verify){
-                return "Successfully log in";
+                return "true";
             }else{
-                return "User not exist";
+                return "false";
             }
            }
     
@@ -76,6 +82,49 @@ function validate_login(){
     
 }
 
+function validate_signup(){
 
+    if(isset($_POST['sign'])){
+
+            $email = $_POST['email'];
+            $pass = hash("sha256", $_POST['pass']);
+
+            require "../config/connection.php";
+            
+            $command = "SELECT * FROM user WHERE email = '".trim($email)."'";
+
+           $result = $conn -> query($command);
+
+           if($result ->num_rows > 0){
+            while($data = $result -> fetch_assoc()){
+                    $result -> free();
+                    return "emailfalse";
+            }
+           }else{
+            $num = randomWithLength(2);
+            $command = "INSERT INTO user (username, email, password, role) VALUES('User$num', '$email', '$pass', 'admin')";
+            $conn -> query($command);
+            $conn -> close();
+
+            return "emailtrue";
+           }
+    
+    }
+    
+}
+
+
+function randomWithLength($length){
+
+  $number = '';
+  for ($i = 0; $i < $length; $i++){
+      $number .= rand(0,9);
+  }
+
+  return (int)$number;
+
+}
 
 ?>
+
+

@@ -1,12 +1,12 @@
 
 
     <?php
-    
+
     require "../config/connection.php";
-    
+
     $command = "SELECT projectid, projectname, projectcover, projectdate FROM project ORDER BY projectdate DESC";
-    
-    $result = $conn -> query($command);
+
+    $result = $conn->query($command);
 
     echo '
         <div id="board">
@@ -45,13 +45,13 @@
 
 ';
 
-        if($result ->num_rows > 0){
-            while($data = $result -> fetch_assoc()){
+    if ($result->num_rows > 0) {
+        while ($data = $result->fetch_assoc()) {
 
             echo '  
-                        <div class="project-card" style="background-image: url('.$data['projectcover'].');" id="card'.$data['projectid'].'">
+                        <div class="project-card" style="background-image: url(' . $data['projectcover'] . ');" id="card' . $data['projectid'] . '">
                             <div class="project-title">
-                                    <h1>'.$data['projectname'].'</h1>
+                                    <h1>' . $data['projectname'] . '</h1>
                             </div>
                             <div class="status">
                                     <i class="fa-solid fa-star" style="color: #ffbb00;"></i>
@@ -61,7 +61,7 @@
             ';
         }
     }
-    echo'
+    echo '
                         </div>
                     </main>
                 </div>

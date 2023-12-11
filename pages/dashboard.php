@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="../styles/board.css">
     <link rel="stylesheet" href="../styles/member.css">
     <link rel="stylesheet" href="../styles/createproject.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../jquery/jquery3.7OFFLINE.js"></script>
     <script src="../function/functionality.js"></script>
+    <script src="../function/membersfunction.js"></script>
     <script src="https://kit.fontawesome.com/a3ac451aad.js" crossorigin="anonymous"></script>
     <title>Project Orbit | Dashboard</title>
 </head>
@@ -27,7 +30,7 @@
                          <img src="../images/profile.jpg" alt="profile">
                        </div>
                         <div class="name">
-                            <h4>Oscar JR</h4>
+                            <h4>User</h4>
                         </div>
                         <div>
                             <i class="fa-solid fa-caret-down"></i>
