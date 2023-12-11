@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+:root {
+    --primary: #25B4B2;
+    --secondary: #006D68;
+    --white: #ffffff;
+    --black: #000000;
+    --hover: #E3FFFF;
+  }
+  
+
+body{
+
+    width: 100%;
+    position: relative;
+}
+
+.members-section{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #25B4B270;
+    height: 87dvh;
+    width: 100%;
+    
+}
