@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/landing.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../jquery/jquery3.7OFFLINE.js"></script>
+    <script src="../function/loginfunction.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -89,50 +92,49 @@
             <h1>Sign In</h1>
             <p class="pt-4">Welcome Back! Let's Orbit Together.</p>
             <!--! form -->
-            <form action="#">
+            <form action="">
               <!-- input email -->
 
               <div class="form-floating mb-3">
                 <input
                   type="email"
                   class="form-control"
-                  id="floatingInput"
+                  id="email"
                   placeholder="name@example.com"
                 />
                 <label for="floatingInput">Email address</label>
 
                 <!-- invalid input -->
 
-                <small style="text-align: left"
-                  ><p style="color: red; font-size: smaller">
-                    incorrect input
-                  </p></small
-                >
+                <small style="text-align: left" id="showemail">
+                <p style="color: orange; font-size: smaller" id="indicemail">
+                    required
+                  </p></small>
               </div>
 
               <!-- input password -->
 
-              <div class="form-floating">
+              <div class="form-floating" >
                 <input
                   type="password"
                   class="form-control"
-                  id="floatingPassword"
+                  id="pass"
                   placeholder="Password"
                 />
                 <label for="floatingPassword">Password</label>
 
                 <!-- invalid input -->
 
-                <small style="text-align: left"
-                  ><p style="color: red; font-size: smaller">
-                    incorrect input
+                <small style="text-align: left" id="showpass"
+                  ><p style="color: orange; font-size: smaller" id="indicpass">
+                    required
                   </p></small
                 >
               </div>
               <div class="d-grid gap-2 col-12 mx-auto">
                 <!-- login button -->
 
-                <button class="btn btn-primary" type="button">Log In</button>
+                <button class="btn btn-primary" type="button" id="loginbtn">Log In</button>
               </div>
 
               <!--! forgot password link -->

@@ -1,6 +1,6 @@
 <?php
 validate_Files();
-
+echo validate_login();
 ?>
 
 <?php
@@ -33,8 +33,49 @@ function validate_Files(){
         }    
     }
     
-   
+}
+
+
+// LOG IN
+
+function validate_login(){
+
+    if(isset($_POST['set'])){
+
+            $email = $_POST['email'];
+            $pass = $_POST['pass'];
+
+            $verify = false;
+            require "../config/connection.php";
+            
+            $command = "SELECT * FROM user WHERE role = 'admin'";
+
+           $result = $conn -> query($command);
+           if($result ->num_rows > 0){
+            while($data = $result -> fetch_assoc()){
+
+                if(trim($data['email']) == trim($email)){
+                    if(trim($data['password']) == trim($pass)){
+                        $verify = true;
+                    }else{
+                        return "Incorrect password";
+                    }
+                } 
+
+            }
+            $result -> free();
+            $conn -> close();
+            if($verify){
+                return "Successfully log in";
+            }else{
+                return "User not exist";
+            }
+           }
+    
+    }
     
 }
+
+
 
 ?>
