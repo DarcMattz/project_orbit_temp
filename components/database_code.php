@@ -1,13 +1,11 @@
 <?php
-
+validate_Files();
 
 ?>
 
 <?php
 
-function validate_Files($title, $file){
-
-
+function validate_Files(){
 
     if(isset($_FILES['file'])){
         $file = $_FILES['file'];

@@ -88,8 +88,6 @@
     </div>
 
 
-
-
     <!--! THIS IS FOR OUT MODAL [for creating board] => the class would change to "show-modal" using jquery-->
     <div class="hide-modal " id="modal-createBoard">    
         <div class="inner-card">

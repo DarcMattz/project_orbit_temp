@@ -130,8 +130,6 @@ function cancelButton(btnID, modalID) {
 
 function backButton(modalID) { 
         $(modalID).fadeOut(300);
-        // $(modalID).removeClass("show-modal");
-        // $(modalID).addClass("hide-modal");
 }
 
 
@@ -186,7 +184,6 @@ function backButton(modalID) {
             $("#members").remove();
             $("#calendar").remove();
             
-            $("#body-contents").tr;
             $("#body-contents").append(response);
         }
     });
