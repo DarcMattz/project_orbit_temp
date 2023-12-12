@@ -59,28 +59,4 @@ echo'
 ';
 
 ?>
-    <!-- <script>
-        $(document).ready(function() {
-            // DataTable initialization
-            var table = $('#myTable').DataTable();
-
-            $('#myTable').on('click', '.remove-button', function() {
-                var userID = $(this).data('userid');
-                // AJAX call to delete the user
-                $.ajax({
-                    type: 'POST',
-                    url: 'delete_user.php',
-                    data: {
-                        userID: userID
-                    },
-                    success: function(response) {
-                        alert('User deleted successfully.');
-                        table.row($(this).parents('tr')).remove().draw(); // Remove the row from the DataTable
-                    },
-                    error: function(xhr, status, error) {
-                        alert('Error deleting user:', error);
-                    }
-                });
-            });
-        });
-    </script> -->
+  

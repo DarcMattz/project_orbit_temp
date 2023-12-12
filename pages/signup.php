@@ -161,16 +161,3 @@
 
 </html>
 
-<?php
-function randomWithLength($length){
-
-  $number = '';
-  for ($i = 0; $i < $length; $i++){
-      $number .= rand(0,9);
-  }
-
-  return (int)$number;
-
-}
-
-?>
