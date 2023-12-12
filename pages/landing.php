@@ -24,7 +24,7 @@
                 </ul>
             </nav>
             <div>
-                <a href="#"><button class="nav-button">Login</button></a>
+                <a href="login.php"><button class="nav-button">Login</button></a>
             </div>
     
         </header>
@@ -34,7 +34,7 @@
         <section class="section-contents">
                 <h1>Connect, Innovate Organize</h1>
                 <p>Navigate the path to success with seamless collaboration and efficient project management.</p>
-                <a href="#" class="content-button">Get Started</a>
+                <a href="login.php" class="content-button">Get Started</a>
         </section>
         <img src="../images/hero.png" alt="hero logo" class="hero">
         <!--! -->
